@@ -11,17 +11,22 @@ const Massage = () => {
   const { massageDis, dispatch } = useContext(msgContext);
   //   const [SecondDis, dispatch] = useReducer(MassageReducer, "disss");
   const ChangeMassage = () => {
-    dispatch(MassageAction());
+    dispatch(ShowAction("gfhgfhgf"));
   };
   return (
-    <div>
-        {ShowAction.isOpen?massageDis:"keren"}
-      <h1>{massageDis}</h1>
-      <button onClick={ChangeMassage}>clickk</button>
-      {/* {SecondDis} */}
-      <button onClick={() => dispatch(SecondAction())}>clickkSecond</button>
-      <button onClick={() => dispatch(KerenAction())}>clickkkeren</button>
-    </div>
+    <>
+      {massageDis.isOpen ? (
+        <div>
+          <h1>{massageDis.msg}</h1>
+          <button onClick={ChangeMassage}>clickk</button>
+          {/* {SecondDis} */}
+          <button onClick={() => dispatch(SecondAction())}>clickkSecond</button>
+          <button onClick={() => dispatch(KerenAction())}>clickkkeren</button>
+        </div>
+      ) : (
+        "keren"
+      )}
+    </>
   );
 };
 export default Massage;

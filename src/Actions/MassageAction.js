@@ -1,7 +1,7 @@
-import { INFO, KEREN, PRIMATY, SECONDARY, SHOW, SUCCESS, WARNUNG } from "./TypesAction";
+import { ERROR, INFO, KEREN, PRIMATY, SECONDARY, SHOW, SUCCESS, WARNUNG } from "./TypesAction";
 
 export const MassageAction = (value) => {
-  return { type: SUCCESS ,paload:value};
+  return { type: SUCCESS ,paload:value,isOpen:true};
 };
 export const PrimatyAction = (value) => {
     return { type: PRIMATY , payload:value };
@@ -11,7 +11,7 @@ export const SecondAction = (value) => {
     return { type: SECONDARY,payload:value };
   };
   export const ErrorAction=(value)=>{
-    return{type:Error ,payload:value}
+    return{type:ERROR ,payload:value}
 }
 export const InfoAction=(value)=>{
     return{type:INFO,payload:value}

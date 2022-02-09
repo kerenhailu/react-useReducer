@@ -17,7 +17,7 @@ const MassageReducer = (state, action) => {
     case WARNUNG:
       return "warning";
       case SHOW:
-      return {...action.payload , isOpen:true};
+      return {...state, msg:action.payload , isOpen:!state.isOpen};
     default:
       return state;
   }
